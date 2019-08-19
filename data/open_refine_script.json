@@ -1,0 +1,237 @@
+[
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "DevType",
+      "CareerSat",
+      "JobFactors",
+      "JobSat",
+      "ConvertedComp",
+      "BetterLife"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "BetterLife",
+    "description": "Remove column BetterLife"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "CareerSat",
+    "description": "Remove column CareerSat"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DevType",
+    "expression": "grel:row.index",
+    "onError": "set-to-blank",
+    "newColumnName": "respondentId",
+    "columnInsertIndex": 1,
+    "description": "Create column respondentId at index 1 based on column DevType using expression grel:row.index"
+  },
+  {
+    "op": "core/column-reorder",
+    "columnNames": [
+      "respondentId",
+      "DevType",
+      "JobFactors",
+      "JobSat",
+      "ConvertedComp"
+    ],
+    "description": "Reorder columns"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "DevType",
+    "newColumnName": "devType",
+    "description": "Rename column DevType to devType"
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "columnName": "devType",
+    "keyColumnName": "respondentId",
+    "mode": "separator",
+    "separator": ";",
+    "regex": false,
+    "description": "Split multi-valued cells in column devType"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "respondentId",
+    "description": "Fill down cells in column respondentId"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "JobFactors",
+    "newColumnName": "jobFactors",
+    "description": "Rename column JobFactors to jobFactors"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "jobFactors",
+    "description": "Fill down cells in column jobFactors"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "JobSat",
+    "description": "Fill down cells in column JobSat"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "JobSat",
+    "newColumnName": "jobSat",
+    "description": "Rename column JobSat to jobSat"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "jobSat",
+    "newColumnName": "jobSatisfaction",
+    "description": "Rename column jobSat to jobSatisfaction"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "ConvertedComp",
+    "newColumnName": "compensation",
+    "description": "Rename column ConvertedComp to compensation"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "compensation",
+    "description": "Fill down cells in column compensation"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "jobSatisfaction",
+          "expression": "value",
+          "columnName": "jobSatisfaction",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NA",
+                "l": "NA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "compensation",
+          "expression": "value",
+          "columnName": "compensation",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NA",
+                "l": "NA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "compensation",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column compensation using expression value.toNumber()"
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "columnName": "jobFactors",
+    "keyColumnName": "respondentId",
+    "mode": "separator",
+    "separator": ";",
+    "regex": false,
+    "description": "Split multi-valued cells in column jobFactors"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "respondentId",
+    "description": "Fill down cells in column respondentId"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "devType",
+    "description": "Fill down cells in column devType"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "jobSatisfaction",
+    "description": "Fill down cells in column jobSatisfaction"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "compensation",
+    "description": "Fill down cells in column compensation"
+  }
+]
