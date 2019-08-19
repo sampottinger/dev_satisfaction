@@ -12,11 +12,7 @@ Simple statistical tests for [Stack Overflow Developer Survey 2019]() data and a
 
 Local Development Environment
 ----------------------------------------------------------------------------------------------------
-Visualization requires this project requires use of the [Sam Pottinger Processing](https://github.com/sampottinger/processing) branch and installation instructions are provided at that branch's README. In order to run the python data analysis steps, one will need [Jupyter](https://jupyter.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scipy stats](https://scipy.org/install.html). Users looking for a shortcut may consider installing [Anaconda](https://www.anaconda.com/distribution/). Finally, users may optionally apply data transformation scripts after installing [OpenRefine](http://openrefine.org/).
-
-After installing the required packages, unzip the dev_satisfaction_data.zip archive in the `data` directory such that its contents sit within the data folder. One will also need to generate the following fonts within Processing:
-
- -
+Visualization requires this project requires use of the [Sam Pottinger Processing](https://github.com/sampottinger/processing) branch and installation instructions are provided at that branch's README. In order to run the python data analysis steps, one will need [Jupyter](https://jupyter.org/), [Pandas](https://pandas.pydata.org/), [Matplotlib](https://matplotlib.org/), and [Scipy stats](https://scipy.org/install.html). Users looking for a shortcut may consider installing [Anaconda](https://www.anaconda.com/distribution/). Finally, users may optionally apply data transformation scripts after installing [OpenRefine](http://openrefine.org/). After installing the required packages, unzip the dev_satisfaction_data.zip archive in the `data` directory such that its contents sit within the data folder.
 
 <br>
 
