@@ -1,3 +1,17 @@
+/**
+ * Misc utility functions for the developer satisfaction visualization.
+ *
+ * Misc utility functions for the developer satisfaction visualization, released under the MIT
+ * license as described in LICENSE.txt.
+ */
+
+
+/**
+ * Create a shortened name for a developer type.
+ *
+ * @param devType The original name for the developer type to be shortened.
+ * @return Shorter name for that given developer type.
+ */
 String getDevTypeShort(String devType) {
   return devType.toLowerCase()
     .replace(" or ", " / ")
@@ -25,6 +39,12 @@ String getDevTypeShort(String devType) {
 }
 
 
+/**
+ * Create a shortened name for a job factor.
+ *
+ * @param devType The original name for the job factor to be shortened.
+ * @return Shorter name for that given job factor.
+ */
 String getShortFactorName(String factorName) {
   return FACTOR_SHORT_NAMES.getOrDefault(factorName, factorName);
 }

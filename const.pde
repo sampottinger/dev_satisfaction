@@ -1,3 +1,10 @@
+/**
+ * Constants related to the running of the developer satisfaction visualization.
+ *
+ * Constants related to the running of the developer satisfaction visualization, released under the
+ * MIT license as described in LICENSE.txt
+ */
+
 final int NEAR_BLACK = #333333;
 final int MID_GRAY = #AAAAAA;
 final int DARK_GRAY = #777777;
@@ -41,6 +48,9 @@ PFont SMALL_FONT;
 PFont SMALL_FONT_BOLD;
 PFont TINY_FONT;
 
+/**
+ * Load constants which have be initialized after sketch initialization.
+ */
 void loadSemiconstants() {
   LARGE_FONT = loadFont("Lato-Regular-23.vlw");
   MEDIUM_FONT = loadFont("Lato-Regular-13.vlw");
@@ -48,7 +58,7 @@ void loadSemiconstants() {
   SMALL_FONT = loadFont("Lato-Regular-10.vlw");
   SMALL_FONT_BOLD = loadFont("Lato-Bold-10.vlw");
   TINY_FONT = loadFont("Lato-Regular-8.vlw");
-  
+
   FACTOR_COLORS = new ArrayList<>();
   FACTOR_COLORS.add(#a6cee3);
   FACTOR_COLORS.add(#1f78b4);
@@ -60,7 +70,7 @@ void loadSemiconstants() {
   FACTOR_COLORS.add(#ff7f00);
   FACTOR_COLORS.add(#cab2d6);
   FACTOR_COLORS.add(#6a3d9a);
-  
+
   FACTOR_SHORT_NAMES = new HashMap<>();
   FACTOR_SHORT_NAMES.put("Diversity of the company or organization", "Diversity");
   FACTOR_SHORT_NAMES.put("Financial performance or funding status of the company or organization", "Company finances");
